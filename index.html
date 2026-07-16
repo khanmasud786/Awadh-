@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सांस्कृति साड़ी - Premium Saree Store</title>
+    <style>
+        :root {
+            --gold: #c9a84c;
+            --gold-dark: #a07828;
+            --maroon: #800020;
+            --maroon-light: #a52a3c;
+            --cream: #fff8f0;
+            --dark: #1a0a0a;
+            --text: #333;
+            --white: #fff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.18);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Sans', system-ui, -apple-system, sans-serif;
+            background: #fdf8f3;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============ TOP BAR ============ */
+        .top-bar {
+            background: var(--dark);
+            color: #ddd;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 7px 16px;
+            letter-spacing: 0.5px;
+        }
+        .top-bar span {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* ============ HEADER ============ */
+        .header {
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+        .header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--maroon);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        .logo-icon {
+            font-size: 2rem;
+        }
+        .logo span {
+            color: var(--gold-dark);
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f5f0eb;
+            border-radius: 50px;
+            padding: 6px 6px 6px 18px;
+            flex: 1;
+            max-width: 420px;
+            min-width: 200px;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+        .search-box:focus-within {
+            border-color: var(--gold);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.1);
+        }
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            flex: 1;
+            font-size: 0.95rem;
+            color: #333;
+            padding: 4px 0;
+        }
+        .search-box button {
+            background: var(--gold);
+            border: none;
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .search-box button:hover {
+            background: var(--gold-dark);
+            transform: scale(1.05);
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .cart-btn {
+            position: relative;
+            background: var(--maroon);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+        .cart-btn:hover {
+            background: var(--maroon-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .cart-count {
+            background: var(--gold);
+            color: #000;
+            font-weight: 700;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+        }
+        .wishlist-btn {
+            background: none;
+            border: 2px solid #e0d5c5;
+            color: #888;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .wishlist-btn:hover {
+            border-color: #e74c6f;
+            color: #e74c6f;
+            background: #fff5f7;
+        }
+
+        /* ============ NAVIGATION ============ */
+        .nav {
+            background: #fff;
+            border-top: 1px solid #f0e8dc;
+            border-bottom: 1px solid #f0e8dc;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .nav-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            gap: 4px;
+            padding: 6px 20px;
+        }
+        .nav-btn {
+            background: none;
+            border: none;
+            padding: 10px 18px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #555;
+            border-radius: 50px;
+            transition: var(--transition);
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+            font-family: inherit;
+        }
+        .nav-btn:hover,
+        .nav-btn.active {
+            background: var(--maroon);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            background: linear-gradient(135deg, #1a0a0a 0%, #3d1c1c 40%, #5c2828 70%, #1a0a0a 100%);
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px 55px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(201, 168, 76, 0.15) 0%, transparent 60%);
+            animation: heroGlow 8s ease-in-out infinite;
+        }
+        @keyframes heroGlow {
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+            33% {
+                transform: translate(3%, -2%);
+            }
+            66% {
+                transform: translate(-2%, 3%);
+            }
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            position: relative;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+        .hero h1 span {
+            color: var(--gold);
+        }
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: #000;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            position: relative;
+            letter-spacing: 1px;
+        }
+
+        /* ============ MAIN CONTENT ============ */
+        .main-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        /* ============ SIDEBAR FILTERS ============ */
+        .sidebar {
+            width: 260px;
+            flex-shrink: 0;
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .sidebar h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: var(--dark);
+            letter-spacing: 0.5px;
+        }
+        .filter-group {
+            margin-bottom: 18px;
+        }
+        .filter-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 0;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #444;
+            transition: var(--transition);
+        }
+        .filter-group label:hover {
+            color: var(--maroon);
+        }
+        .filter-group input[type="checkbox"] {
+            accent-color: var(--maroon);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+        .price-filter {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .price-filter input {
+            width: 70px;
+            padding: 7px 10px;
+            border: 2px solid #e8ddd0;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            outline: none;
+            transition: var(--transition);
+        }
+        .price-filter input:focus {
+            border-color: var(--gold);
+        }
+        .price-filter button {
+            background: var(--gold);
+            color: #fff;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+        .price-filter button:hover {
+            background: var(--gold-dark);
+        }
+        .reset-btn {
+            width: 100%;
+            background: #f5f0eb;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #555;
+            transition: var(--transition);
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+        .reset-btn:hover {
+            background: #e8ddd0;
+            color: #333;
+        }
+
+        /* ============ PRODUCT GRID ============ */
+        .products-area {
+            flex: 1;
+        }
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .products-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .sort-select {
+            padding: 8px 14px;
+            border: 2px solid #e8ddd0;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            background: #fff;
+            outline: none;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        .sort-select:focus {
+            border-color: var(--gold);
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 18px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .product-img {
+            height: 260px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        .product-img .saree-visual {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .product-img .fabric-pattern {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+            background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255, 255, 255, 0.1) 3px, rgba(255, 255, 255, 0.1) 6px),
+                repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(0, 0, 0, 0.03) 8px, rgba(0, 0, 0, 0.03) 16px);
+        }
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--maroon);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            z-index: 2;
+            letter-spacing: 0.5px;
+        }
+        .product-badge.new {
+            background: #2e8b57;
+        }
+        .product-badge.bestseller {
+            background: #e4740b;
+        }
+        .product-wishlist {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-wishlist:hover {
+            transform: scale(1.15);
+            color: #e74c6f;
+        }
+        .product-info {
+            padding: 14px 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-category {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .product-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #222;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+        .product-price {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--maroon);
+            margin-bottom: 10px;
+        }
+        .product-price .original {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-left: 6px;
+        }
+        .product-price .discount {
+            color: #2e8b57;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 4px;
+        }
+        .add-to-cart-btn {
+            width: 100%;
+            background: var(--maroon);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            margin-top: auto;
+            letter-spacing: 0.3px;
+            font-family: inherit;
+        }
+        .add-to-cart-btn:hover {
+            background: var(--gold-dark);
+            transform: translateY(-1px);
+        }
+        .add-to-cart-btn.added {
+            background: #2e8b57;
+            animation: pulse 0.4s ease;
+        }
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.06);
+            }
+        }
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        /* ============ CART SIDEBAR ============ */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .cart-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 400px;
+            max-width: 90vw;
+            height: 100%;
+            background: #fff;
+            z-index: 2001;
+            transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+        }
+        .cart-panel.open {
+            right: 0;
+        }
+        .cart-header {
+            padding: 18px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-header h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .close-cart:hover {
+            background: #f5f0eb;
+        }
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+        }
+        .cart-empty {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+        .cart-empty .empty-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f5f0eb;
+            align-items: center;
+        }
+        .cart-item-img {
+            width: 60px;
+            height: 75px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .cart-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .cart-item-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .cart-item-price {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 0.9rem;
+        }
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 4px;
+        }
+        .cart-item-qty button {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 2px solid #e0d5c5;
+            background: #fff;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cart-item-qty button:hover {
+            background: var(--maroon);
+            color: #fff;
+            border-color: var(--maroon);
+        }
+        .cart-item-qty span {
+            font-weight: 600;
+            min-width: 20px;
+            text-align: center;
+        }
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #c0392b;
+            cursor: pointer;
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        .cart-item-remove:hover {
+            background: #fff5f5;
+        }
+        .cart-footer {
+            padding: 16px 20px;
+            border-top: 1px solid #eee;
+            background: #fdf8f3;
+        }
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        .cart-total span:last-child {
+            color: var(--maroon);
+        }
+        .checkout-btn {
+            width: 100%;
+            background: var(--gold);
+            color: #000;
+            border: none;
+            padding: 14px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            font-family: inherit;
+        }
+        .checkout-btn:hover {
+            background: var(--gold-dark);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--dark);
+            color: #ccc;
+            text-align: center;
+            padding: 24px 20px;
+            font-size: 0.85rem;
+            margin-top: 30px;
+            letter-spacing: 0.3px;
+        }
+        .footer span {
+            color: var(--gold);
+        }
+
+        /* ============ TOAST ============ */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #1a0a0a;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            z-index: 3000;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.9rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1024px) {
+            .main-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+                padding: 14px 16px;
+                border-radius: var(--radius-sm);
+            }
+            .sidebar h3 {
+                width: 100%;
+                margin-bottom: 0;
+            }
+            .filter-group {
+                margin-bottom: 0;
+                flex: 1;
+                min-width: 140px;
+            }
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+                gap: 12px;
+            }
+            .product-img {
+                height: 210px;
+                font-size: 3rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .header-inner {
+                padding: 8px 12px;
+                gap: 8px;
+            }
+            .logo {
+                font-size: 1.3rem;
+            }
+            .logo-icon {
+                font-size: 1.5rem;
+            }
+            .search-box {
+                max-width: 100%;
+                order: 3;
+                flex: 1 1 100%;
+            }
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .product-img {
+                height: 170px;
+                font-size: 2.5rem;
+            }
+            .product-info {
+                padding: 10px 12px;
+            }
+            .product-name {
+                font-size: 0.8rem;
+            }
+            .product-price {
+                font-size: 0.95rem;
+            }
+            .add-to-cart-btn {
+                font-size: 0.75rem;
+                padding: 8px;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .hero p {
+                font-size: 0.9rem;
+            }
+            .nav-btn {
+                padding: 8px 12px;
+                font-size: 0.78rem;
+            }
+            .cart-panel {
+                width: 100%;
+                max-width: 100%;
+                right: -100%;
+            }
+        }
+        @media (max-width: 380px) {
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .product-img {
+                height: 150px;
+                font-size: 2rem;
+            }
+            .product-name {
+                font-size: 0.72rem;
+            }
+            .product-price {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        ✨ <span>FREE SHIPPING</span> on orders above ₹999 | Use Code: <span>SANSKRUTI10</span> for 10% OFF ✨
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-icon">🪷</span> सांस्कृति <span>Sarees</span>
+            </a>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search sarees by name, category...">
+                <button id="searchBtn">🔍</button>
+            </div>
+            <div class="header-actions">
+                <button class="wishlist-btn" title="Wishlist">♡</button>
+                <button class="cart-btn" id="cartToggle">
+                    🛒 Cart <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-inner" id="categoryNav">
+            <button class="nav-btn active" data-category="all">All Sarees</button>
+            <button class="nav-btn" data-category="Banarasi Silk">Banarasi Silk</button>
+            <button class="nav-btn" data-category="Kanjivaram">Kanjivaram</button>
+            <button class="nav-btn" data-category="Cotton">Cotton</button>
+            <button class="nav-btn" data-category="Georgette">Georgette</button>
+            <button class="nav-btn" data-category="Chiffon">Chiffon</button>
+            <button class="nav-btn" data-category="Designer">Designer</button>
+            <button class="nav-btn" data-category="Party Wear">Party Wear</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">🪷 NEW COLLECTION 2026 🪷</div>
+        <h1>Handpicked <span>Sarees</span> for Every Occasion</h1>
+        <p>From Banarasi silk to breezy cotton — discover 50+ exquisite sarees crafted with tradition & love.</p>
+    </section>
+
+    <!-- MAIN -->
+    <div class="main-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <h3>🔍 Filters</h3>
+            <div class="filter-group" id="categoryFilters">
+                <label><input type="checkbox" value="Banarasi Silk" class="filter-check"> Banarasi Silk</label>
+                <label><input type="checkbox" value="Kanjivaram" class="filter-check"> Kanjivaram</label>
+                <label><input type="checkbox" value="Cotton" class="filter-check"> Cotton</label>
+                <label><input type="checkbox" value="Georgette" class="filter-check"> Georgette</label>
+                <label><input type="checkbox" value="Chiffon" class="filter-check"> Chiffon</label>
+                <label><input type="checkbox" value="Designer" class="filter-check"> Designer</label>
+                <label><input type="checkbox" value="Party Wear" class="filter-check"> Party Wear</label>
+            </div>
+            <div class="filter-group">
+                <strong style="font-size:0.9rem;">💰 Price Range (₹)</strong>
+                <div class="price-filter">
+                    <input type="number" id="priceMin" placeholder="Min" min="0">
+                    <span>—</span>
+                    <input type="number" id="priceMax" placeholder="Max" min="0">
+                    <button id="priceFilterBtn">Go</button>
+                </div>
+            </div>
+            <button class="reset-btn" id="resetFilters">🔄 Reset All Filters</button>
+        </aside>
+
+        <!-- PRODUCTS -->
+        <div class="products-area">
+            <div class="products-header">
+                <h2 id="productCount">50 Sarees</h2>
+                <select class="sort-select" id="sortSelect">
+                    <option value="default">Sort by: Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name-az">Name: A to Z</option>
+                </select>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+            <div class="no-results" id="noResults" style="display:none;">😔 No sarees match your filters. Try adjusting your search.</div>
+        </div>
+    </div>
+
+    <!-- CART OVERLAY -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- CART PANEL -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3>🛒 Your Cart</h3>
+            <button class="close-cart" id="closeCart">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <span class="empty-icon">🛍️</span>
+                <p>Your cart is empty</p>
+                <p style="font-size:0.8rem;">Add beautiful sarees to get started!</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout ✨</button>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 <span>सांस्कृति Sarees</span> — Crafted with ❤️ in India | All 50+ sarees handpicked for you 🪷</p>
+    </footer>
+
+    <script>
+        (function() {
+            // ============ 50 PRODUCTS DATA ============
+            const products = [
+                // Banarasi Silk (10)
+                { id: 1, name: 'Royal Banarasi Silk Saree', category: 'Banarasi Silk', price: 8999, originalPrice: 12999,
+                    badge: 'Bestseller', colors: ['#8B0000', '#C9A84C', '#4A0000'] },
+                { id: 2, name: 'Zari Woven Banarasi Silk', category: 'Banarasi Silk', price: 7599, originalPrice: 9999,
+                    badge: '', colors: ['#6B1D1D', '#D4AF37', '#3D0C0C'] },
+                { id: 3, name: 'Meenakari Banarasi Silk Saree', category: 'Banarasi Silk', price: 12499, originalPrice: 16999,
+                    badge: 'New', colors: ['#9B1B30', '#E8C547', '#5C1010'] },
+                { id: 4, name: 'Katan Banarasi Silk Saree', category: 'Banarasi Silk', price: 6799, originalPrice: 8999,
+                    badge: '', colors: ['#722F37', '#C5A34B', '#4A1A1A'] },
+                { id: 5, name: 'Tissue Banarasi Silk Saree', category: 'Banarasi Silk', price: 10999, originalPrice: 14999,
+                    badge: 'Bestseller', colors: ['#A0522D', '#DEB887', '#6B3A2A'] },
+                { id: 6, name: 'Shatika Banarasi Silk Saree', category: 'Banarasi Silk', price: 8499, originalPrice: 11999,
+                    badge: '', colors: ['#800020', '#C9A84C', '#3B0008'] },
+                { id: 7, name: 'Organza Banarasi Silk Saree', category: 'Banarasi Silk', price: 13999, originalPrice: 18999,
+                    badge: 'New', colors: ['#C41E3A', '#F0D060', '#7A1020'] },
+                { id: 8, name: 'Pure Katan Silk Banarasi', category: 'Banarasi Silk', price: 15999, originalPrice: 21999,
+                    badge: '', colors: ['#5D1A1A', '#E8C547', '#2E0808'] },
+                { id: 9, name: 'Resham Banarasi Silk Saree', category: 'Banarasi Silk', price: 7299, originalPrice: 9499,
+                    badge: '', colors: ['#8B3A3A', '#D4A84B', '#4A1515'] },
+                { id: 10, name: 'Brocade Banarasi Silk Saree', category: 'Banarasi Silk', price: 18999,
+                    originalPrice: 24999, badge: 'Premium', colors: ['#4A0000', '#FFD700', '#1A0000'] },
+
+                // Kanjivaram (10)
+                { id: 11, name: 'Kanjivaram Pure Silk Saree', category: 'Kanjivaram', price: 9999, originalPrice: 13999,
+                    badge: 'Bestseller', colors: ['#E82561', '#FFB800', '#8B1540'] },
+                { id: 12, name: 'Temple Border Kanjivaram', category: 'Kanjivaram', price: 11499, originalPrice: 15999,
+                    badge: '', colors: ['#D91656', '#F4A300', '#6E0D30'] },
+                { id: 13, name: 'Double Tone Kanjivaram Silk', category: 'Kanjivaram', price: 13499, originalPrice: 17999,
+                    badge: 'New', colors: ['#C2185B', '#E8A020', '#7A0F35'] },
+                { id: 14, name: 'Kanchipuram Silk Saree', category: 'Kanjivaram', price: 8799, originalPrice: 11999,
+                    badge: '', colors: ['#AD1457', '#D4881E', '#5C0A28'] },
+                { id: 15, name: 'Peacock Motif Kanjivaram', category: 'Kanjivaram', price: 15999, originalPrice: 20999,
+                    badge: 'Premium', colors: ['#1B5E20', '#C9A84C', '#0D3B0D'] },
+                { id: 16, name: 'Wedding Kanjivaram Silk', category: 'Kanjivaram', price: 21999, originalPrice: 29999,
+                    badge: 'Bestseller', colors: ['#B71C1C', '#FFD54F', '#6D0000'] },
+                { id: 17, name: 'Checks Pattern Kanjivaram', category: 'Kanjivaram', price: 7499, originalPrice: 9999,
+                    badge: '', colors: ['#D84315', '#FFB74D', '#8B2A0E'] },
+                { id: 18, name: 'Striped Kanjivaram Silk', category: 'Kanjivaram', price: 9499, originalPrice: 12999,
+                    badge: '', colors: ['#6A1B9A', '#E1BEE7', '#3D0A5C'] },
+                { id: 19, name: 'Zari Border Kanjivaram', category: 'Kanjivaram', price: 10499, originalPrice: 14499,
+                    badge: 'New', colors: ['#00695C', '#B2DFDB', '#003D33'] },
+                { id: 20, name: 'Classic Kanjivaram Silk', category: 'Kanjivaram', price: 11999, originalPrice: 15999,
+                    badge: '', colors: ['#BF360C', '#FFCC80', '#7A1F05'] },
+
+                // Cotton (8)
+                { id: 21, name: 'Bengal Tant Cotton Saree', category: 'Cotton', price: 1499, originalPrice: 1999,
+                    badge: '', colors: ['#FAFAFA', '#E0E0E0', '#C8C8C8'] },
+                { id: 22, name: 'Handloom Cotton Saree', category: 'Cotton', price: 1799, originalPrice: 2499,
+                    badge: 'Bestseller', colors: ['#FFF8E7', '#F5E6CC', '#E8D5B7'] },
+                { id: 23, name: 'Chikankari Cotton Saree', category: 'Cotton', price: 2199, originalPrice: 2999,
+                    badge: 'New', colors: ['#FDF5E6', '#EED9B7', '#D4C4A8'] },
+                { id: 24, name: 'Kalamkari Cotton Saree', category: 'Cotton', price: 1999, originalPrice: 2699,
+                    badge: '', colors: ['#FFF0E0', '#E8C9A0', '#C9A878'] },
+                { id: 25, name: 'Mangalagiri Cotton Saree', category: 'Cotton', price: 1299, originalPrice: 1799,
+                    badge: '', colors: ['#FFF5EB', '#F0DCC0', '#DBC8A0'] },
+                { id: 26, name: 'Kota Doria Cotton Saree', category: 'Cotton', price: 1699, originalPrice: 2299,
+                    badge: '', colors: ['#F9F3EA', '#E8DCC8', '#D0C4B0'] },
+                { id: 27, name: 'Ikat Cotton Saree', category: 'Cotton', price: 2499, originalPrice: 3299,
+                    badge: 'Bestseller', colors: ['#FFF3E0', '#F2D5B0', '#D9B88C'] },
+                { id: 28, name: 'Sambalpuri Cotton Saree', category: 'Cotton', price: 1899, originalPrice: 2599,
+                    badge: '', colors: ['#FEF9F0', '#EDE0C8', '#D5C4A5'] },
+
+                // Georgette (7)
+                { id: 29, name: 'Embroidered Georgette Saree', category: 'Georgette', price: 3299, originalPrice: 4499,
+                    badge: 'New', colors: ['#E8D5E0', '#C9A8B8', '#A07888'] },
+                { id: 30, name: 'Stone Work Georgette Saree', category: 'Georgette', price: 3999, originalPrice: 5499,
+                    badge: '', colors: ['#F0E0F0', '#D4C0D8', '#B0A0B8'] },
+                { id: 31, name: 'Printed Georgette Saree', category: 'Georgette', price: 2799, originalPrice: 3699,
+                    badge: '', colors: ['#E8F0E8', '#C8D8C8', '#A0B8A0'] },
+                { id: 32, name: 'Sequins Georgette Saree', category: 'Georgette', price: 4599, originalPrice: 5999,
+                    badge: 'Bestseller', colors: ['#F5E8F0', '#DCC8D8', '#B898B0'] },
+                { id: 33, name: 'Foil Print Georgette Saree', category: 'Georgette', price: 3499, originalPrice: 4799,
+                    badge: '', colors: ['#FFF0F5', '#E8D0DD', '#C8A8B8'] },
+                { id: 34, name: 'Zari Border Georgette', category: 'Georgette', price: 5199, originalPrice: 6999,
+                    badge: 'New', colors: ['#FDE8F0', '#E4C8D4', '#C098A8'] },
+                { id: 35, name: 'Pastel Georgette Saree', category: 'Georgette', price: 2999, originalPrice: 4099,
+                    badge: '', colors: ['#F8F0F8', '#E0D0E0', '#C0B0C0'] },
+
+                // Chiffon (6)
+                { id: 36, name: 'Leheriya Chiffon Saree', category: 'Chiffon', price: 2599, originalPrice: 3499,
+                    badge: '', colors: ['#FFE8E0', '#F8C8B0', '#E0A080'] },
+                { id: 37, name: 'Bandhani Chiffon Saree', category: 'Chiffon', price: 3199, originalPrice: 4299,
+                    badge: 'Bestseller', colors: ['#FFF0E8', '#FAD8C0', '#E8B090'] },
+                { id: 38, name: 'Ombre Dyed Chiffon Saree', category: 'Chiffon', price: 2899, originalPrice: 3899,
+                    badge: 'New', colors: ['#E8F4FF', '#C0DCF0', '#90C0E0'] },
+                { id: 39, name: 'Ruffle Chiffon Saree', category: 'Chiffon', price: 3699, originalPrice: 4999,
+                    badge: '', colors: ['#FFE8F0', '#F8C8D8', '#E098B0'] },
+                { id: 40, name: 'Digital Print Chiffon', category: 'Chiffon', price: 2399, originalPrice: 3199,
+                    badge: '', colors: ['#F5FFE8', '#D8F0C0', '#B0D890'] },
+                { id: 41, name: 'Metallic Chiffon Saree', category: 'Chiffon', price: 4299, originalPrice: 5799,
+                    badge: 'Premium', colors: ['#FFF8F0', '#F0E0C8', '#D8C0A0'] },
+
+                // Designer (5)
+                { id: 42, name: 'Ruffle Designer Saree', category: 'Designer', price: 5999, originalPrice: 7999,
+                    badge: 'New', colors: ['#FFD1DC', '#E8A0B8', '#C87090'] },
+                { id: 43, name: 'Drape Designer Saree', category: 'Designer', price: 7499, originalPrice: 9999,
+                    badge: 'Bestseller', colors: ['#E0D0FF', '#C0A8E8', '#9878C8'] },
+                { id: 44, name: 'Cape Style Designer Saree', category: 'Designer', price: 8999, originalPrice: 11999,
+                    badge: '', colors: ['#FFE0D0', '#F0C0A0', '#D89870'] },
+                { id: 45, name: 'Jacket Designer Saree', category: 'Designer', price: 10999, originalPrice: 14999,
+                    badge: 'Premium', colors: ['#D0E8FF', '#A8C8F0', '#7898D0'] },
+                { id: 46, name: 'Fusion Designer Saree', category: 'Designer', price: 6499, originalPrice: 8599,
+                    badge: 'New', colors: ['#FFF0D0', '#F8D898', '#E0B860'] },
+
+                // Party Wear (4)
+                { id: 47, name: 'Sequin Party Wear Saree', category: 'Party Wear', price: 4999, originalPrice: 6999,
+                    badge: 'Bestseller', colors: ['#1A1A2E', '#E8C547', '#0D0D1A'] },
+                { id: 48, name: 'Velvet Party Wear Saree', category: 'Party Wear', price: 6999, originalPrice: 9499,
+                    badge: '', colors: ['#2D0A2D', '#D4AF37', '#1A051A'] },
+                { id: 49, name: 'Glamour Party Wear Saree', category: 'Party Wear', price: 8499, originalPrice: 11499,
+                    badge: 'New', colors: ['#0D1B2A', '#C9A84C', '#060F18'] },
+                { id: 50, name: 'Shimmer Party Wear Saree', category: 'Party Wear', price: 5799, originalPrice: 7799,
+                    badge: '', colors: ['#1B0A2E', '#E0C060', '#0E0518'] },
+            ];
+
+            // ============ STATE ============
+            let cart = JSON.parse(localStorage.getItem('sareeCart')) || [];
+            let activeCategory = 'all';
+            let activeFilters = [];
+            let priceRange = { min: null, max: null };
+            let searchQuery = '';
+            let sortBy = 'default';
+
+            // ============ DOM REFS ============
+            const productGrid = document.getElementById('productGrid');
+            const cartCountEl = document.getElementById('cartCount');
+            const cartItemsEl = document.getElementById('cartItems');
+            const cartTotalEl = document.getElementById('cartTotal');
+            const cartPanel = document.getElementById('cartPanel');
+            const cartOverlay = document.getElementById('cartOverlay');
+            const cartToggle = document.getElementById('cartToggle');
+            const closeCart = document.getElementById('closeCart');
+            const toast = document.getElementById('toast');
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+            const sortSelect = document.getElementById('sortSelect');
+            const noResults = document.getElementById('noResults');
+            const productCountEl = document.getElementById('productCount');
+            const resetFiltersBtn = document.getElementById('resetFilters');
+            const priceFilterBtn = document.getElementById('priceFilterBtn');
+            const priceMinInput = document.getElementById('priceMin');
+            const priceMaxInput = document.getElementById('priceMax');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            // ============ SAVE CART ============
+            function saveCart() {
+                localStorage.setItem('sareeCart', JSON.stringify(cart));
+            }
+
+            // ============ TOAST ============
+            let toastTimeout;
+
+            function showToast(msg) {
+                clearTimeout(toastTimeout);
+                toast.textContent = msg;
+                toast.classList.add('show');
+                toastTimeout = setTimeout(() => toast.classList.remove('show'), 2000);
+            }
+
+            // ============ CART FUNCTIONS ============
+            function getCartTotal() {
+                return cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+            }
+
+            function getCartCount() {
+                return cart.reduce((sum, item) => sum + item.qty, 0);
+            }
+
+            function updateCartUI() {
+                const count = getCartCount();
+                cartCountEl.textContent = count;
+                cartTotalEl.textContent = '₹' + getCartTotal().toLocaleString('en-IN');
+
+                if (cart.length === 0) {
+                    cartItemsEl.innerHTML = `
+                    <div class="cart-empty">
+                      <span class="empty-icon">🛍️</span>
+                      <p>Your cart is empty</p>
+                      <p style="font-size:0.8rem;">Add beautiful sarees to get started!</p>
+                    </div>`;
+                } else {
+                    cartItemsEl.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                      <div class="cart-item-img" style="background:linear-gradient(135deg, ${item.colors[0]}, ${item.colors[1]});border-radius:8px;position:relative;overflow:hidden;">
+                        <div class="fabric-pattern" style="position:absolute;inset:0;opacity:0.4;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,0.15) 2px,rgba(255,255,255,0.15) 4px),repeating-linear-gradient(90deg,transparent,transparent 5px,rgba(0,0,0,0.04) 5px,rgba(0,0,0,0.04) 10px);"></div>
+                      </div>
+                      <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')}</div>
+                        <div class="cart-item-qty">
+                          <button onclick="window._cartDecrease(${item.id})">−</button>
+                          <span>${item.qty}</span>
+                          <button onclick="window._cartIncrease(${item.id})">+</button>
+                        </div>
+                      </div>
+                      <button class="cart-item-remove" onclick="window._cartRemove(${item.id})">🗑️</button>
+                    </div>`).join('');
+                }
+                saveCart();
+            }
+
+            function addToCart(product) {
+                const existing = cart.find(c => c.id === product.id);
+                if (existing) {
+                    existing.qty += 1;
+                } else {
+                    cart.push({ ...product, qty: 1 });
+                }
+                updateCartUI();
+                showToast(`✅ "${product.name}" added to cart!`);
+            }
+
+            window._cartIncrease = function(id) {
+                const item = cart.find(c => c.id === id);
+                if (item) { item.qty += 1;
+                    updateCartUI(); }
+            };
+            window._cartDecrease = function(id) {
+                const item = cart.find(c => c.id === id);
+                if (item && item.qty > 1) { item.qty -= 1;
+                    updateCartUI(); } else if (item && item.qty === 1) { window._cartRemove(id); }
+            };
+            window._cartRemove = function(id) {
+                const item = cart.find(c => c.id === id);
+                cart = cart.filter(c => c.id !== id);
+                updateCartUI();
+                if (item) showToast(`❌ "${item.name}" removed from cart.`);
+            };
+
+            // ============ FILTER & RENDER ============
+            function getFilteredProducts() {
+                let filtered = [...products];
+
+                // Category filter
+                if (activeCategory !== 'all') {
+                    filtered = filtered.filter(p => p.category === activeCategory);
+                }
+                if (activeFilters.length > 0) {
+                    filtered = filtered.filter(p => activeFilters.includes(p.category));
+                }
+
+                // Price range
+                if (priceRange.min !== null) {
+                    filtered = filtered.filter(p => p.price >= priceRange.min);
+                }
+                if (priceRange.max !== null) {
+                    filtered = filtered.filter(p => p.price <= priceRange.max);
+                }
+
+                // Search
+                if (searchQuery.trim()) {
+                    const q = searchQuery.trim().toLowerCase();
+                    filtered = filtered.filter(p =>
+                        p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q)
+                    );
+                }
+
+                // Sort
+                if (sortBy === 'price-low') {
+                    filtered.sort((a, b) => a.price - b.price);
+                } else if (sortBy === 'price-high') {
+                    filtered.sort((a, b) => b.price - a.price);
+                } else if (sortBy === 'name-az') {
+                    filtered.sort((a, b) => a.name.localeCompare(b.name));
+                }
+
+                return filtered;
+            }
+
+            function renderProducts() {
+                const filtered = getFilteredProducts();
+                productCountEl.textContent = filtered.length + ' Saree' + (filtered.length !== 1 ? 's' : '');
+
+                if (filtered.length === 0) {
+                    productGrid.innerHTML = '';
+                    noResults.style.display = 'block';
+                } else {
+                    noResults.style.display = 'none';
+                    productGrid.innerHTML = filtered.map(p => {
+                        const discount = p.originalPrice ? Math.round((1 - p.price / p
+                            .originalPrice) * 100) : 0;
+                        return `
+                  <div class="product-card" data-id="${p.id}">
+                    <div class="product-img" style="background:linear-gradient(160deg, ${p.colors[0]}, ${p.colors[1]} 50%, ${p.colors[2]});">
+                      <div class="fabric-pattern"></div>
+                      <span style="position:relative;z-index:1;font-size:3.5rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));">🪷</span>
+                      ${p.badge ? `<span class="product-badge ${p.badge.toLowerCase().replace(' ','')}">${p.badge}</span>` : ''}
+                      <button class="product-wishlist" onclick="event.stopPropagation();this.textContent=this.textContent==='♡'?'❤️':'♡';" title="Wishlist">♡</button>
+                    </div>
+                    <div class="product-info">
+                      <span class="product-category">${p.category}</span>
+                      <h3 class="product-name">${p.name}</h3>
+                      <div class="product-price">
+                        ₹${p.price.toLocaleString('en-IN')}
+                        ${p.originalPrice ? `<span class="original">₹${p.originalPrice.toLocaleString('en-IN')}</span>` : ''}
+                        ${discount > 0 ? `<span class="discount">(${discount}% OFF)</span>` : ''}
+                      </div>
+                      <button class="add-to-cart-btn" onclick="window._addToCartById(${p.id})">
+                        🛒 Add to Cart
+                      </button>
+                    </div>
+                  </div>`;
+                    }).join('');
+                }
+            }
+
+            window._addToCartById = function(id) {
+                const product = products.find(p => p.id === id);
+                if (product) {
+                    addToCart(product);
+                    // Button animation
+                    const btn = document.querySelector(`.product-card[data-id="${id}"] .add-to-cart-btn`);
+                    if (btn) {
+                        btn.textContent = '✅ Added!';
+                        btn.classList.add('added');
+                        setTimeout(() => {
+                            btn.textContent = '🛒 Add to Cart';
+                            btn.classList.remove('added');
+                        }, 1200);
+                    }
+                }
+            };
+
+            // ============ EVENT LISTENERS ============
+            // Cart toggle
+            cartToggle.addEventListener('click', () => {
+                cartPanel.classList.add('open');
+                cartOverlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                updateCartUI();
+            });
+            closeCart.addEventListener('click', closeCartPanel);
+            cartOverlay.addEventListener('click', closeCartPanel);
+
+            function closeCartPanel() {
+                cartPanel.classList.remove('open');
+                cartOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            // ESC key to close cart
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && cartPanel.classList.contains('open')) {
+                    closeCartPanel();
+                }
+            });
+
+            // Category nav buttons
+            document.getElementById('categoryNav').addEventListener('click', (e) => {
+                if (e.target.classList.contains('nav-btn')) {
+                    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove(
+                        'active'));
+                    e.target.classList.add('active');
+                    activeCategory = e.target.dataset.category;
+                    activeFilters = [];
+                    document.querySelectorAll('.filter-check').forEach(cb => cb.checked = false);
+                    renderProducts();
+                }
+            });
+
+            // Sidebar category filters
+            document.getElementById('categoryFilters').addEventListener('change', () => {
+                const checked = document.querySelectorAll('.filter-check:checked');
+                activeFilters = Array.from(checked).map(cb => cb.value);
+                if (activeFilters.length > 0) {
+                    activeCategory = 'all';
+                    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelector('.nav-btn[data-category="all"]').classList.add('active');
+                }
+                renderProducts();
+            });
+
+            // Price filter
+            priceFilterBtn.addEventListener('click', () => {
+                const minVal = priceMinInput.value ? parseInt(priceMinInput.value) : null;
+                const maxVal = priceMaxInput.value ? parseInt(priceMaxInput.value) : null;
+                priceRange = { min: minVal, max: maxVal };
+                renderProducts();
+            });
+            priceMinInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') priceFilterBtn.click();
+            });
+            priceMaxInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') priceFilterBtn.click();
+            });
+
+            // Reset filters
+            resetFiltersBtn.addEventListener('click', () => {
+                activeCategory = 'all';
+                activeFilters = [];
+                priceRange = { min: null, max: null };
+                searchQuery = '';
+                sortBy = 'default';
+                searchInput.value = '';
+                priceMinInput.value = '';
+                priceMaxInput.value = '';
+                sortSelect.value = 'default';
+                document.querySelectorAll('.filter-check').forEach(cb => cb.checked = false);
+                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('.nav-btn[data-category="all"]').classList.add('active');
+                renderProducts();
+                showToast('🔄 All filters reset!');
+            });
+
+            // Search
+            searchBtn.addEventListener('click', () => {
+                searchQuery = searchInput.value;
+                renderProducts();
+            });
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    searchQuery = searchInput.value;
+                    renderProducts();
+                }
+            });
+            searchInput.addEventListener('input', () => {
+                if (searchInput.value === '') {
+                    searchQuery = '';
+                    renderProducts();
+                }
+            });
+
+            // Sort
+            sortSelect.addEventListener('change', () => {
+                sortBy = sortSelect.value;
+                renderProducts();
+            });
+
+            // Checkout
+            checkoutBtn.addEventListener('click', () => {
+                if (cart.length === 0) {
+                    showToast('🛒 Your cart is empty! Add some sarees first.');
+                    return;
+                }
+                const total = getCartTotal();
+                const count = getCartCount();
+                if (confirm(
+                        `✨ Confirm Order?\n\n${count} saree(s) — Total: ₹${total.toLocaleString('en-IN')}\n\nProceed to checkout?`
+                        )) {
+                    cart = [];
+                    updateCartUI();
+                    closeCartPanel();
+                    showToast('🎉 Order placed successfully! Thank you for shopping.');
+                }
+            });
+
+            // ============ INITIAL RENDER ============
+            updateCartUI();
+            renderProducts();
+
+            console.log('🪷 सांस्कृति Sarees — 50 Products Loaded Successfully!');
+            console.log('📦 Categories: Banarasi Silk (10), Kanjivaram (10), Cotton (8), Georgette (7), Chiffon (6), Designer (5), Party Wear (4)');
+            console.log('💰 Price Range: ₹1,299 — ₹21,999');
+            console.log('🛒 Cart stored in localStorage for persistence.');
+        })();
+    </script>
+</body>
+</html>
